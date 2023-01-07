@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
-from forarmenians_app.forms import VehicleForm
+from forarmenians_app.forms import *
 from forarmenians_app.models import *
 
 
@@ -78,6 +78,12 @@ class JobVacancyDetailView(DetailView):
     template_name = "job/job-single-vacancy.html"
 
 
+class JobVacancyCreateView(CreateView):
+    model = JobVacancy
+    form_class = JobVacancyForm
+    template_name = 'job/submit-job.html'
+
+
 # Market
 
 
@@ -88,11 +94,13 @@ class MarketView(TemplateView):
 # News
 
 
-class NewsView(TemplateView):
+class NewsView(ListView):
+    model = News
     template_name = "news/news.html"
 
 
-class NewsDetailView(TemplateView):
+class NewsDetailView(DetailView):
+    model = News
     template_name = "news/news-single.html"
 
 
@@ -153,12 +161,19 @@ class ChooceCategoriesView(TemplateView):
 
 
 class VehicleView(TemplateView):
-
     template_name = "vehicle/vehicle.html"
 
 
 class VehicleCatalogView(ListView):
     model = VehicleAd
+    queryset = VehicleAd.objects.filter(rent=False)
+    template_name = "vehicle/vehicle-catalog.html"
+
+
+class VehicleCatalogRentView(ListView):
+
+    model = VehicleAd
+    queryset = VehicleAd.objects.filter(rent=True)
     template_name = "vehicle/vehicle-catalog.html"
 
 
@@ -169,4 +184,5 @@ class VehicleDetailView(DetailView):
 
 class VehicleCreateView(CreateView):
     form_class = VehicleForm
-    template_name = "submit/submit-auto.html"
+    template_name = "vehicle/submit-auto.html"
+

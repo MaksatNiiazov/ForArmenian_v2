@@ -66,7 +66,7 @@
                </form>
                <div class="articles-items__wrap">
                   <div class="articles__articles articles-items">
-                     <div class="articles-items__item articles-item articles-item_big -articles-item-bg">
+                      <div class="articles-items__item articles-item articles-item_big -articles-item-bg">
                         <a href="" class="articles-item__link"></a>
                         <a href="" class="articles-item__image -ai"><img src="{% static 'img/articles/image.jpg' %}" alt=""></a>
                         <div class="articles-item__body">
@@ -80,106 +80,34 @@
                            <h3 class="articles-item__title">Audit Your New Store: 7 Rules for Writing Engaging Fashion and Apparel Product Descriptions</h3>
                            <div class="articles-item__text">Your ideal customer has just landed on your website. They clicked on all the right CTAs along the way. They navigated successfully to the product information page. And they’re finally reading the product description for that brand new sports bra when BOOM. They exit. Every business owner’s worst nightmare.</div>
                            <div class="articles-item__footer">
-                              <a href="{% url 'news-detail' %}" class="articles-item__more">Read More article</a>
-                              <a href="" class="articles-item__more">лента ру</a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="articles-items__item articles-item -articles-item-bg">
-                        <a href="" class="articles-item__link"></a>
-                        <a href="" class="articles-item__image -ai"><img src="{% static 'img/articles/image.jpg' %}" alt=""></a>
-                        <div class="articles-item__body articles-item__body_small">
-                           <h4 class="articles-item__subtitle">
-                              December 30, 2019
-                              <span class="articles-item__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </span>
-                           </h4>
-                           <h3 class="articles-item__title">How, when and why we stay in touch with installers and customers</h3>
-                           <div class="articles-item__text">Staying in touch with customers is important for any company; it often forms part of any good marketing strategy.</div>
-                           <div class="articles-item__footer">
                               <a href="" class="articles-item__more">Read More article</a>
                               <a href="" class="articles-item__more">лента ру</a>
                            </div>
                         </div>
                      </div>
-                     <div class="articles-items__item articles-item -articles-item-bg">
+
+                      {% for object in object_list %}
+                          <div class="articles-items__item articles-item -articles-item-bg">
                         <a href="" class="articles-item__link"></a>
-                        <a href="" class="articles-item__image -ai"><img src="{% static 'img/articles/image.jpg' %}" alt=""></a>
+                        <a href="" class="articles-item__image -ai"><img src="{{ object.photo.url }}" alt=""></a>
                         <div class="articles-item__body articles-item__body_small">
                            <h4 class="articles-item__subtitle">
-                              December 30, 2019
+                              {{ object.created_date }}
                               <span class="articles-item__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
                               </span>
                            </h4>
-                           <h3 class="articles-item__title">How, when and why we stay in touch with installers and customers</h3>
-                           <div class="articles-item__text">Staying in touch with customers is important for any company; it often forms part of any good marketing strategy.</div>
+                           <h3 class="articles-item__title">{{ object.title }}</h3>
+                           <div class="articles-item__text">{{ object.description|truncatechars:120 }}</div>
                            <div class="articles-item__footer">
-                              <a href="" class="articles-item__more">Read More article</a>
-                              <a href="" class="articles-item__more">лента ру</a>
+                              <a href="{% url 'news-detail' object.pk %}" class="articles-item__more">Read More article</a>
+                              <a href="{{ object.link }}" class="articles-item__more">{{ object.news_source }}</a>
                            </div>
                         </div>
                      </div>
-                     <div class="articles-items__item articles-item -articles-item-bg">
-                        <a href="" class="articles-item__link"></a>
-                        <a href="" class="articles-item__image -ai"><img src="{% static 'img/articles/image.jpg' %}" alt=""></a>
-                        <div class="articles-item__body articles-item__body_small">
-                           <h4 class="articles-item__subtitle">
-                              December 30, 2019
-                              <span class="articles-item__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </span>
-                           </h4>
-                           <h3 class="articles-item__title">How, when and why we stay in touch with installers and customers</h3>
-                           <div class="articles-item__text">Staying in touch with customers is important for any company; it often forms part of any good marketing strategy.</div>
-                           <div class="articles-item__footer">
-                              <a href="" class="articles-item__more">Read More article</a>
-                              <a href="" class="articles-item__more">лента ру</a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="articles-items__item articles-item -articles-item-bg">
-                        <a href="" class="articles-item__link"></a>
-                        <a href="" class="articles-item__image -ai"><img src="{% static 'img/articles/image.jpg' %}" alt=""></a>
-                        <div class="articles-item__body articles-item__body_small">
-                           <h4 class="articles-item__subtitle">
-                              December 30, 2019
-                              <span class="articles-item__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </span>
-                           </h4>
-                           <h3 class="articles-item__title">How, when and why we stay in touch with installers and customers</h3>
-                           <div class="articles-item__text">Staying in touch with customers is important for any company; it often forms part of any good marketing strategy.</div>
-                           <div class="articles-item__footer">
-                              <a href="" class="articles-item__more">Read More article</a>
-                              <a href="" class="articles-item__more">лента ру</a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="articles-items__item articles-item -articles-item-bg">
-                        <a href="" class="articles-item__link"></a>
-                        <a href="" class="articles-item__image -ai"><img src="{% static 'img/articles/image.jpg' %}" alt=""></a>
-                        <div class="articles-item__body articles-item__body_small">
-                           <h4 class="articles-item__subtitle">
-                              December 30, 2019
-                              <span class="articles-item__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </span>
-                           </h4>
-                           <h3 class="articles-item__title">How, when and why we stay in touch with installers and customers</h3>
-                           <div class="articles-item__text">Staying in touch with customers is important for any company; it often forms part of any good marketing strategy.</div>
-                           <div class="articles-item__footer">
-                              <a href="" class="articles-item__more">Read More article</a>
-                              <a href="" class="articles-item__more">лента ру</a>
-                           </div>
-                        </div>
-                     </div>
+
+                      {% endfor %}
                      <div class="articles-items__item articles-item -articles-item-bg">
                         <a href="" class="articles-item__link"></a>
                         <a href="" class="articles-item__image -ai"><img src="{% static 'img/articles/image.jpg' %}" alt=""></a>

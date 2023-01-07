@@ -10,3 +10,11 @@ class VehicleForm(forms.ModelForm):
     class Meta:
         model = VehicleAd
         fields = "__all__"
+
+
+class JobVacancyForm(forms.ModelForm):
+    required_css_class = "submit-auto-select"
+
+    class Meta:
+        model = JobVacancy
+        fields = "__all__"

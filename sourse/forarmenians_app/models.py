@@ -60,6 +60,9 @@ class JobAd(Ad):
     work_graphic = models.CharField(max_length=300)
     education = models.CharField(max_length=200)
     frequency_of_payment = models.CharField(max_length=50, default='per month')
+    salary_from = models.PositiveSmallIntegerField(default=1)
+    salary_to = models.PositiveSmallIntegerField(default=1)
+    currency = models.CharField(max_length=20, default='USD')
 
 
 class JobKeySkills(models.Model):
@@ -149,6 +152,7 @@ class VehicleAd(Ad):
     engine_volume = models.IntegerField()
     mileage = models.CharField(max_length=100)
     power = models.DecimalField(decimal_places=1, max_digits=5)
+    rent = models.BooleanField(default=False)
 
 
 # Property
@@ -236,16 +240,20 @@ class EntertainmentRating(models.Model):
 
 # News
 
-class NewsCategory(models.Model):
-    category = models.CharField(max_length=30)
-
 
 class News(models.Model):
-    category = models.ForeignKey(NewsCategory, on_delete=models.PROTECT, related_name='news')
+    created_date = models.DateField(auto_now=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news')
     title = models.CharField(max_length=100)
     description = models.TextField()
     photo = models.ImageField(upload_to='static/img/news_photos')
+    news_source = models.CharField(max_length=100)
     link = models.URLField(max_length=300)
+
+
+class NewsCategory(models.Model):
+    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='categories')
+    category = models.CharField(max_length=30)
 
 
 # ABC

@@ -16,10 +16,12 @@ urlpatterns = [
     path('job/vacancy/<int:pk>/', JobVacancyDetailView.as_view(), name='job-detail-vacancy'),
     path('job-catalog/resume/', JobCatalogResumeView.as_view(), name='job-catalog-resume'),
     path('job/resume/<int:pk>/', JobResumeDetailView.as_view(), name='job-detail-resume'),
+    path('job/create-vacancy/', JobVacancyCreateView.as_view(), name='job-detail-vacancy'),
+    # path('job/create-resume/', JobResumeCreateView.as_view(), name='job-detail-resume'),
 
     path('market/', MarketView.as_view(), name='market'),
     path('news/', NewsView.as_view(), name='news'),
-    path('news/detail/', NewsDetailView.as_view(), name='news-detail'),
+    path('news/<int:pk>/', NewsDetailView.as_view(), name='news-detail'),
     path('profile/', ProfileView.as_view(), name='profile'),
     path('profile-ads/', ProfileADCView.as_view(), name='profile-ads'),
     path('profile-wallet/', ProfileWalletView.as_view(), name='profile-wallet'),
@@ -31,9 +33,13 @@ urlpatterns = [
     path('useful', UsefulView.as_view(), name='useful'),
     path('useful/detail/', UsefulDetailView.as_view(), name='useful-detail'),
     path('choose-categories/', ChooceCategoriesView.as_view(), name='choose-categories'),
+
+
     path('vehicle/', VehicleView.as_view(), name='vehicle'),
     path('vehicle-catalog/', VehicleCatalogView.as_view(), name='vehicle-catalog'),
+    path('vehicle-catalog/rent/', VehicleCatalogRentView.as_view(), name='vehicle-catalog-rent'),
+    path('vehicle/create/', VehicleCreateView.as_view(), name='vehicle-create'),
     path('vehicle/<int:pk>/', VehicleDetailView.as_view(), name='vehicle-detail'),
-    path('vehicle/create/', VehicleCreateView.as_view(), name='vehicle-create')
+
 ]
 

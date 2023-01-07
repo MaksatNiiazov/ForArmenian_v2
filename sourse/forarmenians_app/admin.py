@@ -22,4 +22,7 @@ admin.site.register(JobLanguageSkill)
 admin.site.register(JobVacancy)
 admin.site.register(JobResume)
 
+admin.site.register(NewsCategory)
+admin.site.register(News)
+
 

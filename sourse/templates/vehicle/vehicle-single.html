@@ -510,12 +510,12 @@
                      <a href="" data-popup-link=".seller-popup" class="info-seller-product__profile">
                         <span class="info-seller-product__avatar -ai"><img src="{% static 'img/product/avatar.jpg' %}" alt=""></span>
                         <div class="info-seller-product__profile-info">
-                           <span class="info-seller-product__name">Mahfuz Riad</span>
+                           <span class="info-seller-product__name">{{ object.created_by.first_name }} {{ object.created_by.last_name }}</span>
                            <div class="info-seller-product__rating"><span class="-icon-star"></span>4.7 (145 review)</div>
                         </div>
                      </a>
-                     <a href="tel:" class="info-seller-product__btn info-seller-product__btn_phone btn-product btn-product_green">01682648xxx <span class="-icon-tel"></span></a>
-                     <a href="mailto:" class="info-seller-product__btn info-seller-product__btn_mail btn-product btn-product_red">@mahfuz.145 <span class="-icon-mail"></span></a>
+                     <a href="tel:{{ object.created_by }}" class="info-seller-product__btn info-seller-product__btn_phone btn-product btn-product_green">01682648xxx <span class="-icon-tel"></span></a>
+                     <a href="mailto:{{ object.created_by.email }}" class="info-seller-product__btn info-seller-product__btn_mail btn-product btn-product_red">{{ object.created_by.email }}<span class="-icon-mail"></span></a>
                   </div>
                   <form action="#" class="product__form form-contact-product">
                      <h3 class="form-contact-product__title title-product">Contact Seller</h3>
@@ -600,12 +600,12 @@
                            <div class="slider-suggestions-product__wrapper swiper-wrapper">
                               <div class="slider-suggestions-product__slide swiper-slide">
                                  <div class="slider-suggestions-product__image -ai">
-                                    <img src="img/product/suggestions-01.jpg" alt="">
+                                    <img src="{% static 'img/product/suggestions-01.jpg' %}" alt="">
                                  </div>
                               </div>
                               <div class="slider-suggestions-product__slide swiper-slide">
                                  <div class="slider-suggestions-product__image -ai">
-                                    <img src="img/product/suggestions-01.jpg" alt="">
+                                    <img src="{% static 'img/product/suggestions-01.jpg' %}" alt="">
                                  </div>
                               </div>
                            </div>
