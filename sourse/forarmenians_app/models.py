@@ -59,6 +59,7 @@ class AdPhoto(models.Model):
 class JobAd(Ad):
     work_graphic = models.CharField(max_length=300)
     education = models.CharField(max_length=200)
+    frequency_of_payment = models.CharField(max_length=50, default='per month')
 
 
 class JobKeySkills(models.Model):
@@ -86,7 +87,6 @@ class JobLanguageSkill(models.Model):
 class JobVacancy(JobAd):
     responsibilities = models.TextField()
     requirements = models.TextField()
-    frequency_of_payment = models.CharField(max_length=50, default='per month')
 
 
 class JobResume(JobAd):

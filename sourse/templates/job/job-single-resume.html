@@ -82,7 +82,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -117,7 +117,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -152,7 +152,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -187,7 +187,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -222,7 +222,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -257,7 +257,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -396,54 +396,48 @@
                         </div>
                      </div>
                      <div class="info-product__side">
-                        <div class="info-product__price">${{ object.price }} <span>/{{ object. }}</span></div>
+                         <h4>Desired Salary</h4>
+                        <div class="info-product__price">${{ object.price }} <span>/{{ object.frequency_of_payment }}</span></div>
                         <div class="info-product__label info-product__label_hide"></div>
                      </div>
+
                   </div>
                   <div class="product__photos photos-product">
                      <div class="photos-product__images">
-                         {% for photo in object.photos.all  %}
-                            <p>{{ photo.photo.url }}</p>
-                         {% endfor %}
+                     <div>
+                        <div><img src="{{ object.resume_photo.url }}" alt="" style="height: 200px;"></div>
+                         <div><h4>{{ object.created_by.first_name }} {{ object.created_by.last_name }}</h4></div>
+                     </div>
                      </div>
                      <a href="" class="photos-product__link">more photos</a>
                   </div>
                   <div class="product__descs">
                      <div class="product__desc">
-                        <h3 class="product__label label-product label-product_big">Seller comment:</h3>
-                        <p class="product__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p class="product__text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident, sunt in culpa</p>
-                     </div>
-                     <div class="product__desc">
-                        <h3 class="product__label label-product label-product_big">Seller comment:</h3>
-                        <p class="product__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3 class="product__label label-product label-product_big">About Me:</h3>
+                        <p class="product__text">{{ object.description }}</p>
                      </div>
                   </div>
                   <div class="product__overview overview-product">
                      <div class="overview-product__row overview-product__row_green">
-                        <h3 class="overview-product__label label-product">Special Features:</h3>
-                        <div class="overview-product__items">
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
+                        <h3 class="overview-product__label label-product">Special Skills:</h3>
+                     <div class="overview-product__items">
+                         {% for skills in object.key_skills.all %}
+                             <div class="overview-product__item">
+                              <h4 class="overview-product__title">{{ skills.skill }}</h4>
                            </div>
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
-                           </div>
+                         {% endfor %}
                         </div>
                      </div>
                      <div class="overview-product__row overview-product__row_green">
                         <h3 class="overview-product__label label-product">Languages:</h3>
                         <div class="overview-product__items">
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
+                            {% for languages in object.languages.all %}
+                              <div class="overview-product__item">
+                              <h4 class="overview-product__title">{{ languages.language }}</h4>
+                              <div class="overview-product__subtitle">{{ languages.level }}</div>
                            </div>
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
-                           </div>
+
+                            {% endfor %}
                         </div>
                      </div>
                      <div class="overview-product__row overview-map-product">

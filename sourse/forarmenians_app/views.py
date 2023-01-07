@@ -60,20 +60,20 @@ class JobView(TemplateView):
 
 class JobCatalogResumeView(ListView):
     model = JobResume
-    template_name = "job/job-catalog.html"
+    template_name = "job/job-catalog-resume.html"
 
 
-class JobDetailView(DetailView):
-    model = JobAd
-    template_name = "job/job-single.html"
+class JobResumeDetailView(DetailView):
+    model = JobResume
+    template_name = "job/job-single-resume.html"
 
 
 class JobCatalogVacancyView(ListView):
     model = JobVacancy
-    template_name = "job/job-catalog.html"
+    template_name = "job/job-catalog-vacancy.html"
 
 
-class JobCatalogVacancyDetailView(DetailView):
+class JobVacancyDetailView(DetailView):
     model = JobVacancy
     template_name = "job/job-single-vacancy.html"
 
