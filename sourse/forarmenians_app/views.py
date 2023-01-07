@@ -58,9 +58,14 @@ class JobView(TemplateView):
     template_name = "job/job.html"
 
 
-class JobCatalogView(ListView):
-    model = JobAd
+class JobCatalogResumeView(ListView):
+    model = JobResume
     template_name = "job/job-catalog.html"
+
+
+class JobDetailView(DetailView):
+    model = JobAd
+    template_name = "job/job-single.html"
 
 
 class JobCatalogVacancyView(ListView):
@@ -68,9 +73,12 @@ class JobCatalogVacancyView(ListView):
     template_name = "job/job-catalog.html"
 
 
-class JobDetailView(DetailView):
-    model = JobAd
-    template_name = "job/job-single.html"
+class JobCatalogVacancyDetailView(DetailView):
+    model = JobVacancy
+    template_name = "job/job-single-vacancy.html"
+
+
+# Market
 
 
 class MarketView(TemplateView):

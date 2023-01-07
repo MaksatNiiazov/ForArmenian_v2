@@ -13,8 +13,10 @@ urlpatterns = [
     path('events/detail/', EventsDetailView.as_view(), name='events-detail'),
     path('job/', JobView.as_view(), name='job'),
     path('job-catalog/vacancy/', JobCatalogVacancyView.as_view(), name='job-catalog-vacancy'),
-    path('job-catalog/', JobCatalogView.as_view(), name='job-catalog'),
+    path('job-catalog/resume/', JobCatalogResumeView.as_view(), name='job-catalog'),
+    path('job/vacancy/<int:pk>/', JobCatalogVacancyDetailView.as_view(), name='job-detail-vacancy'),
     path('job/<int:pk>/', JobDetailView.as_view(), name='job-detail'),
+
     path('market/', MarketView.as_view(), name='market'),
     path('news/', NewsView.as_view(), name='news'),
     path('news/detail/', NewsDetailView.as_view(), name='news-detail'),

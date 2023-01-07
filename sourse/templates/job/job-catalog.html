@@ -234,7 +234,7 @@
                                        <div class="slider-item-products-ads__wrapper swiper-wrapper">
                                            {% for photo in object.photos.all %}
                                                <div class="slider-item-products-ads__slide swiper-slide">
-                                                 <a href="{% url 'job-detail' object.pk %}" class="slider-item-products-ads__image -ai"><img src="{{ photo.photo.url }}" alt=""></a>
+                                                 <a href="{% url 'job-detail-vacancy' object.pk %}" class="slider-item-products-ads__image -ai"><img src="{{ photo.photo.url }}" alt=""></a>
                                               </div>
                                            {% endfor %}
                                        </div>
@@ -245,7 +245,7 @@
                                     <div class="item-catalog__row">
                                        <div class="item-catalog__texts">
                                           <div class="item-catalog__date">{{ object.created_date }}</div>
-                                          <a href="{% url 'job-detail' object.pk %}" class="item-catalog__title">{{ object.title }}</a>
+                                          <a href="{% url 'job-detail-vacancy' object.pk %}" class="item-catalog__title">{{ object.title }}</a>
                                        </div>
                                        <div class="item-catalog__actions">
                                           <a href=""><span class="-icon-share"></span></a>

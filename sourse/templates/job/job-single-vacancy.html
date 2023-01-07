@@ -82,7 +82,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -117,7 +117,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -152,7 +152,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -187,7 +187,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -222,7 +222,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -257,7 +257,7 @@
                               <div class="item-content__price-green">$60</div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>   
+                              <div class="item-content__rating item-content__rating_nmb"><span class="-icon-star"></span>4.7 (145 review)</div>
                               <div class="item-content__actions">
                                  <a href="" class="item-content__share"><span class="-icon-share"></span></a>
                                  <a href="" class="item-content__like"><span class="-icon-like"></span></a>
@@ -390,13 +390,13 @@
                            <span>{{ object.title }}</span>
                            Sicamous, BC, V0E 2V1  Listing ID: 10161461
                         </h2>
-                        <div class="info-product__date">12 december 19</div>
+                        <div class="info-product__date">{{ object.created_date }}</div>
                         <div class="info-product__links info-product__links_job-single" data-me="767.98, .info-product, last">
                            <a href="" data-popup-link=".file-popup" class="info-product__link info-product__link_red"></span>Send my resume</a>
                         </div>
                      </div>
                      <div class="info-product__side">
-                        <div class="info-product__price">${{ object.price }} <span>/{{ object. }}</span></div>
+                        <div class="info-product__price">${{ object.price }} <span>/{{ object.frequency_of_payment }}</span></div>
                         <div class="info-product__label info-product__label_hide"></div>
                      </div>
                   </div>
@@ -410,40 +410,37 @@
                   </div>
                   <div class="product__descs">
                      <div class="product__desc">
-                        <h3 class="product__label label-product label-product_big">Seller comment:</h3>
-                        <p class="product__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p class="product__text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident, sunt in culpa</p>
+                        <h3 class="product__label label-product label-product_big">Responsibilities:</h3>
+                        <p class="product__text">{{ object.responsibilities }}</p>
                      </div>
                      <div class="product__desc">
-                        <h3 class="product__label label-product label-product_big">Seller comment:</h3>
-                        <p class="product__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3 class="product__label label-product label-product_big">Requirements:</h3>
+                        <p class="product__text">{{ object.requirements }}</p>
                      </div>
                   </div>
                   <div class="product__overview overview-product">
                      <div class="overview-product__row overview-product__row_green">
-                        <h3 class="overview-product__label label-product">Special Features:</h3>
+                        <h3 class="overview-product__label label-product">Special Skills:</h3>
                         <div class="overview-product__items">
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
-                           </div>
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
-                           </div>
+                            {% for skill in object.key_skills.all %}
+                               <div class="overview-product__item">
+                                <h4 class="overview-product__title">{{ skill.skill }}</h4>
+                               </div>
+                            {% endfor %}
                         </div>
                      </div>
                      <div class="overview-product__row overview-product__row_green">
                         <h3 class="overview-product__label label-product">Languages:</h3>
                         <div class="overview-product__items">
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
-                           </div>
-                           <div class="overview-product__item">
-                              <h4 class="overview-product__title">Brand</h4>
-                              <div class="overview-product__subtitle">Toyota Allion</div>
-                           </div>
+                            {% for languages in object.languages.all %}
+                                <div class="overview-product__item">
+                                    <h4 class="overview-product__title">{{ languages.language }}</h4>
+                                    <div class="overview-product__subtitle">{{ languages.level }}</div>
+                                </div>
+
+                            {% endfor %}
+
+
                         </div>
                      </div>
                      <div class="overview-product__row overview-map-product">
