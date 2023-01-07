@@ -226,7 +226,12 @@ class UsefulResources(Ad):
 # Entertainments
 
 
+class EntertainmentType(models.Model):
+    type = models.CharField(max_length=50)
+
+
 class EntertainmentAd(Ad):
+    type = models.ForeignKey(EntertainmentType, on_delete=models.PROTECT, related_name='entertainment_ads')
     start_time = models.TimeField(blank=True)
     end_time = models.TimeField(blank=True)
 

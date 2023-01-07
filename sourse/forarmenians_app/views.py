@@ -32,11 +32,13 @@ class CafeDetailView(TemplateView):
 # Entertainments
 
 
-class EntertainmentsView(TemplateView):
+class EntertainmentsView(ListView):
+    model = EntertainmentAd
     template_name = "entertainments/entertainments.html"
 
 
-class EntertainmentsDetailView(TemplateView):
+class EntertainmentsDetailView(DetailView):
+    model = EntertainmentAd
     template_name = "entertainments/entertainments-single.html"
 
 

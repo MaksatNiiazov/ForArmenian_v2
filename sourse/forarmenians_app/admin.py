@@ -25,4 +25,6 @@ admin.site.register(JobResume)
 admin.site.register(NewsCategory)
 admin.site.register(News)
 
+admin.site.register(EntertainmentType)
+admin.site.register(EntertainmentAd)
 

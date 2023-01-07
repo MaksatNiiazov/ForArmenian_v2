@@ -5,11 +5,11 @@
 
 
       <div class="page">
-         <div class="page__top-block top-block top-block_settings-right top-block_padding top-block_cafe">
+         <div class="page__top-block top-block toptop-block_settings-right top-block_padding top-block_cafe">
             <div class="top-block__image -ai"><img src="img/top-block/image.jpg" alt=""></div>
             <div class="top-block__container -container">
                <div class="top-block__body">
-                  <h2 class="top-block__title top-title top-title_ads">Locations</h2>
+                  <h2 class="top-block__title -title top-title_ads">Locations</h2>
                   <div class="top-block__search search search_search search_inp search_ads search_cafe-single search_top">
                      <div class="search__body">
                         <form action="#" class="search__row">
@@ -143,37 +143,34 @@
                      </form>
                   </div>
                   <div class="catalog__grid catalog__grid_col2">
-                     <div class="products-cafe__item item-products-ads item-products-ads_cafe">
+                      {% for object in object_list %}
+                          <div class="products-cafe__item item-products-ads item-products-ads_cafe">
                         <div class="item-products-ads__slider slider-item-products-ads">
                            <div class="slider-item-products-ads__body swiper">
                               <div class="slider-item-products-ads__wrapper swiper-wrapper">
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
+                                  {% for images in object.photos.all %}
+                                      <div class="slider-item-products-ads__slide swiper-slide">
+                                        <a href="" class="slider-item-products-ads__image -ai"><img src="{{ images.photo.url }}" alt=""></a>
+                                     </div>
+                                  {% endfor %}
                               </div>
                            </div>
-                           <a href="" class="slider-item-products-ads__pagination -slider-pagination-row"></a>
+                           <a href="{% url 'entertainments-detail' object.pk %}" class="slider-item-products-ads__pagination -slider-pagination-row"></a>
                         </div>
                         <div class="item-products-ads__content item-content">
                            <div class="item-content__meta">
                               <div class="item-content__info">
-                                 <span><span class="-icon-map"></span>Sanger, United States</span>
+                                 <span><span class="-icon-map"></span>{{ object.address }}</span>
                               </div>
                            </div>
                            <div class="item-content__row">
-                              <a href="{% url 'entertainments-detail' %}" class="item-content__title">In tempo caffee</a>
+                              <a href="{% url 'entertainments-detail' object.pk %}" class="item-content__title">{{ object.title }}</a>
                            </div>
-                           <div class="item-content__category">caffee</div>
+                           <div class="item-content__category">{{ object.type.type }}</div>
                            <div class="item-content__settings settings-item">
                               <div class="settings-item__item">
                                  <h4 class="settings-item__title">Work time</h4>
-                                 <div class="settings-item__text">13:00 - 00:00</div>
+                                 <div class="settings-item__text">{{ object.start_time|time:"H:i" }} - {{ object.end_time|time:"H:i" }}</div>
                               </div>
                            </div>
                            <div class="item-content__footer item-content__footer_df">
@@ -185,216 +182,9 @@
                            </div>
                         </div>
                      </div>
-                     <div class="products-cafe__item item-products-ads item-products-ads_cafe">
-                        <div class="item-products-ads__slider slider-item-products-ads">
-                           <div class="slider-item-products-ads__body swiper">
-                              <div class="slider-item-products-ads__wrapper swiper-wrapper">
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                              </div>
-                           </div>
-                           <a href="" class="slider-item-products-ads__pagination -slider-pagination-row"></a>
-                        </div>
-                        <div class="item-products-ads__content item-content">
-                           <div class="item-content__meta">
-                              <div class="item-content__info">
-                                 <span><span class="-icon-map"></span>Sanger, United States</span>
-                              </div>
-                           </div>
-                           <div class="item-content__row">
-                              <a href="" class="item-content__title">In tempo caffee</a>
-                           </div>
-                           <div class="item-content__category">caffee</div>
-                           <div class="item-content__settings settings-item">
-                              <div class="settings-item__item">
-                                 <h4 class="settings-item__title">Work time</h4>
-                                 <div class="settings-item__text">13:00 - 00:00</div>
-                              </div>
-                           </div>
-                           <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating"><span class="-icon-star"></span>4.7 (145 review)</div>
-                              <div class="item-content__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="products-cafe__item item-products-ads item-products-ads_cafe">
-                        <div class="item-products-ads__slider slider-item-products-ads">
-                           <div class="slider-item-products-ads__body swiper">
-                              <div class="slider-item-products-ads__wrapper swiper-wrapper">
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                              </div>
-                           </div>
-                           <a href="" class="slider-item-products-ads__pagination -slider-pagination-row"></a>
-                        </div>
-                        <div class="item-products-ads__content item-content">
-                           <div class="item-content__meta">
-                              <div class="item-content__info">
-                                 <span><span class="-icon-map"></span>Sanger, United States</span>
-                              </div>
-                           </div>
-                           <div class="item-content__row">
-                              <a href="" class="item-content__title">In tempo caffee</a>
-                           </div>
-                           <div class="item-content__category">caffee</div>
-                           <div class="item-content__settings settings-item">
-                              <div class="settings-item__item">
-                                 <h4 class="settings-item__title">Work time</h4>
-                                 <div class="settings-item__text">13:00 - 00:00</div>
-                              </div>
-                           </div>
-                           <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating"><span class="-icon-star"></span>4.7 (145 review)</div>
-                              <div class="item-content__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="products-cafe__item item-products-ads item-products-ads_cafe">
-                        <div class="item-products-ads__slider slider-item-products-ads">
-                           <div class="slider-item-products-ads__body swiper">
-                              <div class="slider-item-products-ads__wrapper swiper-wrapper">
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                              </div>
-                           </div>
-                           <a href="" class="slider-item-products-ads__pagination -slider-pagination-row"></a>
-                        </div>
-                        <div class="item-products-ads__content item-content">
-                           <div class="item-content__meta">
-                              <div class="item-content__info">
-                                 <span><span class="-icon-map"></span>Sanger, United States</span>
-                              </div>
-                           </div>
-                           <div class="item-content__row">
-                              <a href="" class="item-content__title">In tempo caffee</a>
-                           </div>
-                           <div class="item-content__category">caffee</div>
-                           <div class="item-content__settings settings-item">
-                              <div class="settings-item__item">
-                                 <h4 class="settings-item__title">Work time</h4>
-                                 <div class="settings-item__text">13:00 - 00:00</div>
-                              </div>
-                           </div>
-                           <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating"><span class="-icon-star"></span>4.7 (145 review)</div>
-                              <div class="item-content__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="products-cafe__item item-products-ads item-products-ads_cafe">
-                        <div class="item-products-ads__slider slider-item-products-ads">
-                           <div class="slider-item-products-ads__body swiper">
-                              <div class="slider-item-products-ads__wrapper swiper-wrapper">
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                              </div>
-                           </div>
-                           <a href="" class="slider-item-products-ads__pagination -slider-pagination-row"></a>
-                        </div>
-                        <div class="item-products-ads__content item-content">
-                           <div class="item-content__meta">
-                              <div class="item-content__info">
-                                 <span><span class="-icon-map"></span>Sanger, United States</span>
-                              </div>
-                           </div>
-                           <div class="item-content__row">
-                              <a href="" class="item-content__title">In tempo caffee</a>
-                           </div>
-                           <div class="item-content__category">caffee</div>
-                           <div class="item-content__settings settings-item">
-                              <div class="settings-item__item">
-                                 <h4 class="settings-item__title">Work time</h4>
-                                 <div class="settings-item__text">13:00 - 00:00</div>
-                              </div>
-                           </div>
-                           <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating"><span class="-icon-star"></span>4.7 (145 review)</div>
-                              <div class="item-content__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="products-cafe__item item-products-ads item-products-ads_cafe">
-                        <div class="item-products-ads__slider slider-item-products-ads">
-                           <div class="slider-item-products-ads__body swiper">
-                              <div class="slider-item-products-ads__wrapper swiper-wrapper">
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                                 <div class="slider-item-products-ads__slide swiper-slide">
-                                    <a href="" class="slider-item-products-ads__image -ai"><img src="{% static 'img/products-ads/image.jpg' %}" alt=""></a>
-                                 </div>
-                              </div>
-                           </div>
-                           <a href="" class="slider-item-products-ads__pagination -slider-pagination-row"></a>
-                        </div>
-                        <div class="item-products-ads__content item-content">
-                           <div class="item-content__meta">
-                              <div class="item-content__info">
-                                 <span><span class="-icon-map"></span>Sanger, United States</span>
-                              </div>
-                           </div>
-                           <div class="item-content__row">
-                              <a href="" class="item-content__title">In tempo caffee</a>
-                           </div>
-                           <div class="item-content__category">caffee</div>
-                           <div class="item-content__settings settings-item">
-                              <div class="settings-item__item">
-                                 <h4 class="settings-item__title">Work time</h4>
-                                 <div class="settings-item__text">13:00 - 00:00</div>
-                              </div>
-                           </div>
-                           <div class="item-content__footer item-content__footer_df">
-                              <div class="item-content__rating"><span class="-icon-star"></span>4.7 (145 review)</div>
-                              <div class="item-content__actions">
-                                 <a href="" class="item-content__share"><span class="-icon-share"></span></a>
-                                 <a href="" class="item-content__like"><span class="-icon-like"></span></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+
+                      {% endfor %}
+
                   </div>
                </div>
             </div>
